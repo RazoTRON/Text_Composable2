@@ -36,3 +36,5 @@ files:
   visible: false
 - name: src/main/java/org/hyperskill/textcomposable/Components.kt
   visible: false
+- name: src/test/resources/robolectric.properties
+  visible: false

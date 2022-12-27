@@ -5,6 +5,9 @@ import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,11 +28,27 @@ class ShortTextTest {
 
         composeTestRule
             .onNodeWithText("short text", substring = true, ignoreCase = true)
-            .assert(SemanticsMatcher.expectValue(semColorKey, Color.Black))
+            .assert(
+                SemanticsMatcher.expectValue(semColorKey, Color.Black).or(
+                    SemanticsMatcher.expectValue(
+                        semAnnotatedStringSpanStyleKey, SpanStyle(
+                            color = Color.Black
+                        )
+                    )
+                )
+            )
 
 
         composeTestRule
             .onNodeWithText("long text", substring = true, ignoreCase = true)
-            .assert(SemanticsMatcher.expectValue(semColorKey, Color.Red))
+            .assert(
+                SemanticsMatcher.expectValue(semColorKey, Color.Red).or(
+                    SemanticsMatcher.expectValue(
+                        semAnnotatedStringSpanStyleKey, SpanStyle(
+                            color = Color.Red
+                        )
+                    )
+                )
+            )
     }
 }

@@ -6,8 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-
-//import androidx.compose.material.Text
+// DO NOT import androidx.compose.material.Text
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +16,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-// DO NOT change the code above!
 
 @Composable
 fun SingleLine(text: String) {

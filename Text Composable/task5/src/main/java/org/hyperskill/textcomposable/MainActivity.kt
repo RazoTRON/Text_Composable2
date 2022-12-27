@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontWeight
-//import androidx.compose.material.Text
+// DO NOT import androidx.compose.material.Text
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +17,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-// DO NOT change the code above!
 
 @Composable
 fun SayMyName() {

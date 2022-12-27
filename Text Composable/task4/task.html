@@ -1,11 +1,14 @@
-<h2>Application inspection # Application</h2>
+<h2>Styled text # Application</h2>
 
-<p>It's time to put the acquired knowledge into practice. We have a small application running much slower than it should. The problem is that the application takes a long time to start when you press the "Start" button. To fix the problem, you must find out which function is slowing down the application launch.</p>
+<p>Implement a composable <code>StyledText</code> with a <code>text</code> parameter of String type. This composable should display on the screen the text received as an argument. This text should have a shadow with the following configuration:</p>
 
-<ol>
-	<li>Run the app on an emulator or your physical device.</li>
-	<li>Find out which function is slowing down the loading of the application when you press the "Start" button.</li>
-	<li>Assign the name of the slow function to the <code>solution</code> variable as the String type.</li>
-</ol>
+<ul>
+	<li><strong>Color</strong>: green</li>
+	<li><strong>The radius of blur</strong>: 3.0</li>
+	<li><strong>Offset</strong>: x: 0, y: 0</li>
+</ul>
 
-<p>[HINT] Luckily, the developers who messed up the code took care of you and added custom trace events. [/HINT]</p>
+<p>Example of result:<br>
+	<img alt="" height="52" name="matrix.png" src="https://ucarecdn.com/10942947-6280-41d1-8956-fe72d9f8223f/" width="107"></p>
+
+<p>[ALERT-warning]To pass tests, DO NOT import <strong>androidx.compose.material.Text</strong> .[/ALERT]</p>

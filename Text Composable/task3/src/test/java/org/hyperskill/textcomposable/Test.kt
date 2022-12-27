@@ -1,32 +1,42 @@
 package org.hyperskill.textcomposable
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-class MessageTest {
+class InconsolataTextTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
-    fun testSayMyName() {
+    fun testInconsolataText() {
         composeTestRule.setContent {
-            SayMyName()
+            InconsolataText(text = "Font text")
         }
 
         composeTestRule
-            .onNodeWithText("say my name", ignoreCase = true)
-            .assert(SemanticsMatcher.expectValue(semAnnotatedString03Key, listOf(say)))
+            .onNodeWithText("Font text", ignoreCase = true)
+            .assert(
+                SemanticsMatcher.expectValue(semFontFamilyKey, FontFamily(Font(R.font.inconsolata)))
+                    .or(
+                        SemanticsMatcher.expectValue(
+                            semAnnotatedStringSpanStyleKey, SpanStyle(
+                                fontFamily = FontFamily(Font(R.font.inconsolata))
+                            )
+                        )
+                    )
+            )
     }
 }

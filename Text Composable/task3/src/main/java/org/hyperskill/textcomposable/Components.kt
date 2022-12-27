@@ -4,6 +4,7 @@ import androidx.compose.material3.LocalTextStyle
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.SemanticsPropertyKey
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver
@@ -12,6 +13,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -71,14 +73,8 @@ var SemanticsPropertyReceiver.semAnnotatedString by semAnnotatedStringKey
 val semStringKey = SemanticsPropertyKey<String>("String")
 var SemanticsPropertyReceiver.semString by semStringKey
 
-val  semAnnotatedString03Key = SemanticsPropertyKey<List<AnnotatedString.Range<SpanStyle>>>("AnnotatedString03")
-var SemanticsPropertyReceiver.semAnnotatedString03 by semAnnotatedString03Key
-
-val semAnnotatedString46Key = SemanticsPropertyKey<List<AnnotatedString.Range<SpanStyle>>>("AnnotatedString46")
-var SemanticsPropertyReceiver.semAnnotatedString46 by semAnnotatedString46Key
-
-val semAnnotatedString711Key = SemanticsPropertyKey<List<AnnotatedString.Range<SpanStyle>>>("AnnotatedString711")
-var SemanticsPropertyReceiver.semAnnotatedString711 by semAnnotatedString711Key
+val semAnnotatedStringSpanStyleKey = SemanticsPropertyKey<SpanStyle>("semAnnotatedStringSpanStyle")
+var SemanticsPropertyReceiver.semAnnotatedStringSpanStyle by semAnnotatedStringSpanStyleKey
 
 @Composable
 fun Text(
@@ -118,9 +114,6 @@ fun Text(
         modifier = modifier
             .testTag("Text")
             .semantics {
-                semAnnotatedString03 = text.subSequence(0, 3).spanStyles
-                semAnnotatedString46 = text.subSequence(4, 6).spanStyles
-                semAnnotatedString711 = text.subSequence(7, 11).spanStyles
                 semAnnotatedString = text
                 semColor = color
                 semFontSize = fontSize
@@ -136,6 +129,13 @@ fun Text(
                 semMaxLines = maxLines
                 semOnTextLayout = onTextLayout
                 semStyle = style
+                semAnnotatedStringSpanStyle = text.spanStyles[text.spanStyles.indexOf(
+                    AnnotatedString.Range(
+                        item = SpanStyle(fontFamily = FontFamily(Font(R.font.inconsolata))),
+                        start = 0,
+                        end = text.length
+                    )
+                )].item
             }
     )
 }

@@ -30,3 +30,11 @@ files:
   visible: false
 - name: src/main/java/org/hyperskill/textcomposable/ui/theme/Theme.kt
   visible: false
+- name: src/main/java/org/hyperskill/textcomposable/Components.kt
+  visible: false
+- name: src/test/java/org/hyperskill/textcomposable/Test.kt
+  visible: false
+- name: src/test/java/org/hyperskill/textcomposable/internals/AbstractUnitTest.kt
+  visible: false
+- name: src/test/resources/robolectric.properties
+  visible: false

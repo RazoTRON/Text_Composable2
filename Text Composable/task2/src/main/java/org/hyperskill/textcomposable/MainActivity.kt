@@ -5,6 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.withStyle
+// DO NOT import androidx.compose.material.Text
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,12 +20,18 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-// DO NOT change the code above!
 
 @Composable
 fun ShortText(text: String) {
+//    Text(
+//        text = text,
+//        color = if (text.length > 20) Color.Red else Color.Black
+//    )
     Text(
-        text = text,
-        color = if (text.length > 20) Color.Red else Color.Black
+        text = buildAnnotatedString {
+            withStyle(SpanStyle(color = if (text.length > 20) Color.Red else Color.Black)) {
+                append(text)
+            }
+        }
     )
 }

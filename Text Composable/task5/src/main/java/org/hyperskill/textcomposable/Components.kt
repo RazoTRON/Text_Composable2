@@ -118,9 +118,11 @@ fun Text(
         modifier = modifier
             .testTag("Text")
             .semantics {
-                semAnnotatedString03 = text.subSequence(0, 3).spanStyles
-                semAnnotatedString46 = text.subSequence(4, 6).spanStyles
-                semAnnotatedString711 = text.subSequence(7, 11).spanStyles
+                try {
+                    semAnnotatedString03 = text.subSequence(0, 3).spanStyles
+                    semAnnotatedString46 = text.subSequence(4, 6).spanStyles
+                    semAnnotatedString711 = text.subSequence(7, 11).spanStyles
+                } catch(_: Exception) { }
                 semAnnotatedString = text
                 semColor = color
                 semFontSize = fontSize
