@@ -19,15 +19,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun SingleLine(text: String) {
-    Text(
-        text = text,
-        maxLines = 1,
-        overflow = TextOverflow.Ellipsis
-    )
-}
 
-@Preview
-@Composable
-fun PreviewShortLine() {
-    SingleLine(text = "some txt\nsdkkljkljlkfsd")
 }

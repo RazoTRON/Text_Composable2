@@ -40,3 +40,19 @@ class InconsolataTextTest {
             )
     }
 }
+
+
+//@Composable
+//fun InconsolataText(text: String) {
+////    Text(
+////        text = text,
+////        fontFamily = FontFamily(Font(R.font.inconsolata))
+////    )
+//    Text(
+//        text = buildAnnotatedString {
+//            withStyle(SpanStyle(fontFamily = FontFamily(Font(R.font.inconsolata)))) {
+//                append(text)
+//            }
+//        }
+//    )
+//}

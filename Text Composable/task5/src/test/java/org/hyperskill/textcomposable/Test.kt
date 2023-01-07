@@ -44,3 +44,19 @@ class MessageTest {
             .assert(SemanticsMatcher.expectValue(semAnnotatedString711Key, listOf(name)))
     }
 }
+//@Composable
+//fun SayMyName() {
+//    Text(
+//        text = buildAnnotatedString {
+//            withStyle(SpanStyle(color = Color.Black)) {
+//                append("Say ")
+//            }
+//            withStyle(SpanStyle(fontWeight = FontWeight.SemiBold, color = Color.Black)) {
+//                append("my ")
+//            }
+//            withStyle(SpanStyle(fontWeight = FontWeight.ExtraBold, color = Color.Red)) {
+//                append("NAME")
+//            }
+//        }
+//    )
+//}

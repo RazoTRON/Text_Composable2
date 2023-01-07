@@ -52,3 +52,19 @@ class ShortTextTest {
             )
     }
 }
+
+
+//@Composable
+//fun ShortText(text: String) {
+////    Text(
+////        text = text,
+////        color = if (text.length > 20) Color.Red else Color.Black
+////    )
+//    Text(
+//        text = buildAnnotatedString {
+//            withStyle(SpanStyle(color = if (text.length > 20) Color.Red else Color.Black)) {
+//                append(text)
+//            }
+//        }
+//    )
+//}

@@ -24,27 +24,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun StyledText(text: String) {
-//    Text(
-//        text = text,
-//        style = TextStyle(
-//            shadow = Shadow(
-//                color = Color.Green,
-//                blurRadius = 3f
-//            )
-//        ),
-//    )
-    Text(text = buildAnnotatedString {
-        withStyle(SpanStyle(shadow = Shadow(
-            color = Color.Green,
-            blurRadius = 3f
-        ))) {
-            append(text)
-        }
-    })
-}
 
-@Preview
-@Composable
-fun test() {
-    StyledText(text = "Matrix")
 }
